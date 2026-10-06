@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Trading Desk · 나의 자동매매</title>
+  <meta name="description" content="나의 PC에서 운영하는 자동매매 사이트에 접속합니다.">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="./">↗ <span>Trading Desk</span></a><span class="badge">PERSONAL WORKSPACE</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">MY TRADING DESK</p><h1>나의 투자,<br>어디서든 확인.</h1><p class="lead">PC에서 운영하는 자동매매 사이트를<br>휴대폰과 다른 컴퓨터에서도 열어보세요.</p><div class="tags"><span>개인 기기 연결</span><span>PC 서버 운영</span></div></section>
+    <section class="connection" aria-labelledby="connection-title">
+      <div class="icon" aria-hidden="true">↗</div><h2 id="connection-title">내 자동매매 사이트 열기</h2>
+      <p>한 번 등록한 접속 주소를 이 브라우저에서 기억합니다.</p>
+      <label for="server">PC 보안 접속 주소</label>
+      <input id="server" type="url" inputmode="url" autocapitalize="none" autocomplete="off" spellcheck="false" placeholder="Tailscale에서 발급된 https://…ts.net 주소">
+      <p class="hint">PC 연결 설정이 끝나면 발급된 주소를 등록하세요.</p>
+      <button id="open" class="primary" type="button">주소 저장하고 사이트 열기 <span aria-hidden="true">↗</span></button>
+      <p id="error" role="alert"></p>
+      <button id="forget" class="text-button" type="button" hidden>이 브라우저에 저장된 주소 지우기</button>
+      <div class="note"><b>비밀번호는 연결된 사이트에서 입력하세요.</b><p>이 접속 페이지에서는 로그인이나 계좌 정보를 입력하지 않습니다.</p></div>
+    </section>
+    <section class="steps" aria-label="접속 준비"><article><span>01</span><h3>PC 서버 실행</h3><p>PC와 Docker가 켜져 있고 자동매매 사이트가 실행 중이어야 합니다.</p></article><article><span>02</span><h3>개인 기기 연결</h3><p>PC와 휴대폰의 Tailscale에 같은 계정으로 로그인하고 연결을 켜세요.</p></article><article><span>03</span><h3>사이트 접속</h3><p>위에 등록한 주소로 이동한 뒤 기존 사이트 비밀번호로 로그인하세요.</p></article></section>
+    <details><summary>사이트가 열리지 않나요?</summary><p>PC의 인터넷·Docker·사이트 실행 상태와 휴대폰의 Tailscale 연결을 확인하세요. PC가 꺼져 있거나 절전 상태이면 접속할 수 없습니다.</p><p>이 페이지는 서버 연결 상태를 검사하지 않습니다. 사이트를 열어 실제 응답을 확인하세요.</p></details>
+  </main>
+  <footer><span>Trading Desk · 개인용 자동매매 접속</span><a href="https://github.com/Park-Jongchul/algorithmicTrading" rel="noreferrer">프로젝트 저장소 ↗</a></footer>
+</body>
+</html>
